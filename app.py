@@ -13,6 +13,15 @@ st.set_page_config(
     layout="wide"
 )
 
+st.markdown("""
+    <style>
+        #MainMenu {visibility: hidden;}
+        footer {visibility: hidden;}
+        .stDeployButton {display: none;}
+        a[href*="github"] {display: none;}
+    </style>
+""", unsafe_allow_html=True)
+
 # ── KONEKSI & AMBIL DATA ──────────────────────────────────
 @st.cache_data(ttl=600)  # Cache 10 menit
 def load_data(simbol: str) -> pd.DataFrame:
